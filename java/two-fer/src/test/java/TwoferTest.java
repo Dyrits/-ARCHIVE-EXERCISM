@@ -46,5 +46,13 @@ public class TwoferTest {
 
         assertEquals(expected, twofer.twofer(input));
     }
+
+    @Test
+    public void noArgument() {
+        String input = null;
+        String expected = "One for you, one for me.";
+
+        assertEquals(expected, twofer.twofer());
+    }
     
 }
