@@ -6,11 +6,11 @@ public class Hamming {
     public Hamming(String leftStrand, String rightStrand) {
         leftDNAStrand = leftStrand;
         rightDNAStrand = rightStrand;
-        hammingDistance = Hamming.calculateHammingDistance(leftDNAStrand, rightDNAStrand);
+        hammingDistance = calculateHammingDistance(leftDNAStrand, rightDNAStrand);
     }
 
     public static int calculateHammingDistance(String leftStrand, String rightStrand) {
-        Hamming.checkStrandLengths(leftStrand, rightStrand);
+        checkStrandLengths(leftStrand, rightStrand);
         int calculatedHammingDistance = 0;
         for (int index = 0; index < leftStrand.length(); index++) {
             if (leftStrand.charAt(index) != rightStrand.charAt(index)) {
