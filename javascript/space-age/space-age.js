@@ -9,10 +9,12 @@ const ORBITAL_PERIODS = {
     "neptune": 164.79132
 }
 
-const getEarthYears = (seconds) => seconds / 31557600;
+const SECONDS_IN_A_YEAR = 31_557_600;
 
-const roundNumber = (number, decimals = 2) => parseFloat(number.toFixed(decimals));
+const earthAge = seconds => seconds / SECONDS_IN_A_YEAR;
 
-export const age = (planet, seconds) => roundNumber(getEarthYears(seconds) / ORBITAL_PERIODS[planet]);
+const spaceAge = (planet, seconds) => earthAge(seconds) / ORBITAL_PERIODS[planet];
 
+const round = (number, decimals = 2) => parseFloat(number.toFixed(decimals));
 
+export const age = (planet, seconds) => round(spaceAge(planet, seconds));
